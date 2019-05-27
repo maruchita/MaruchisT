@@ -1,0 +1,23 @@
+
+  <div class="container-fluid p-3 mb-2">
+    <h5> <i class="far fa-list-alt"></i> Mis tableros</h5>
+  <div class="row">
+    <div *ngFor="let board of boards" class="col">
+  <div  class="card p-3 mb-2 bg-success text-white ">
+      
+          <h5 class="card-title"><i class="fas fa-id-card-alt"></i> {{board.name}}</h5>
+       
+      <div  *ngFor="let list of board.lists" class="card-body">
+        <h6 class="card-title"><i class="fas fa-check"></i> {{list.name}}</h6>
+      
+     
+      <ul *ngFor="let c of list.cards" class="list-group list-group-flush bg-success text-white ">
+        <li class="list-group-item bg-success text-white ">{{c.name}}</li>
+       
+      </ul> 
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+

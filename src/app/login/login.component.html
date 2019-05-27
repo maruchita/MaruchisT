@@ -1,0 +1,47 @@
+<div class="container">
+
+  <div class="row">
+      <div class="col"></div>
+     
+    <div class="col">
+  <div class="card">
+    <div class="card-header">
+        <h6 class="card-title"><i class="fas fa-user"></i> Iniciar sesión</h6>
+    </div>
+    <div class="card-body">
+
+        <form>
+            <p *ngIf="operation == 'register'">Ya tienes cuenta? Has <a (click)="operation = 'login'" >Ingresar</a></p>
+            <p *ngIf="operation == 'login'"> No tienes cuenta? <a (click)="operation = 'register'" >Registrate</a></p>
+    
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo electrónico</label>
+              <input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese email">
+              
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input [(ngModel)]="passWord"  [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+
+            <div *ngIf="operation == 'register'" class="form-group">
+                <label for="exampleInputUserTrello">Usuario</label>
+                <input type="text"  class="form-control" id="exampleInputUserTrello" placeholder="Ingrese su Usuario de Trello">
+              </div>
+              <div *ngIf="operation == 'register'" class="form-group">
+                  <label for="exampleInputKeyTrello">Key </label>
+                  <input type="text"  class="form-control" id="exampleInputKeyTrello" placeholder="Insgrese su Key de Trello">
+                </div>
+                <div *ngIf="operation == 'register'" class="form-group">
+                    <label for="exampleInputTokenTrello">Token Trello</label>
+                    <input  type="text"  class="form-control" id="exampleInputTokeTrello" placeholder="Ingrese su Token de Trello">
+                  </div>
+            <button (click)="login()" *ngIf="operation == 'login'" type="submit" class="btn btn-primary">Ingresar</button>
+            <button (click)="register()" *ngIf="operation == 'register'" type="submit" class="btn btn-primary">Registrarme</button>
+          </form>
+    </div>
+  </div>
+  <div class="col"> </div>
+</div>
+</div>
+</div>
