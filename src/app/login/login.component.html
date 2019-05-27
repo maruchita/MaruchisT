@@ -26,15 +26,15 @@
 
             <div *ngIf="operation == 'register'" class="form-group">
                 <label for="exampleInputUserTrello">Usuario</label>
-                <input type="text"  class="form-control" id="exampleInputUserTrello" placeholder="Ingrese su Usuario de Trello">
+                <input [(ngModel)]="userName"  [ngModelOptions]="{standalone: true}" type="text"  class="form-control" id="exampleInputUserTrello" placeholder="Ingrese su Usuario de Trello">
               </div>
               <div *ngIf="operation == 'register'" class="form-group">
                   <label for="exampleInputKeyTrello">Key </label>
-                  <input type="text"  class="form-control" id="exampleInputKeyTrello" placeholder="Insgrese su Key de Trello">
+                  <input [(ngModel)]="key"  [ngModelOptions]="{standalone: true}" type="text"  class="form-control" id="exampleInputKeyTrello" placeholder="Insgrese su Key de Trello">
                 </div>
                 <div *ngIf="operation == 'register'" class="form-group">
                     <label for="exampleInputTokenTrello">Token Trello</label>
-                    <input  type="text"  class="form-control" id="exampleInputTokeTrello" placeholder="Ingrese su Token de Trello">
+                    <input [(ngModel)]="token"  [ngModelOptions]="{standalone: true}"  type="text"  class="form-control" id="exampleInputTokeTrello" placeholder="Ingrese su Token de Trello">
                   </div>
             <button (click)="login()" *ngIf="operation == 'login'" type="submit" class="btn btn-primary">Ingresar</button>
             <button (click)="register()" *ngIf="operation == 'register'" type="submit" class="btn btn-primary">Registrarme</button>

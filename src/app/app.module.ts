@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { AuthenticationService } from './services/authentication.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -21,6 +22,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule }   from '@angular/forms';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 
 const appRoutes: Routes = [
   { path: '', component: AppComponent},
@@ -46,9 +49,10 @@ const appRoutes: Routes = [
     AngularFirestoreModule,// imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [TrelloService, AuthenticationService],
+  providers: [TrelloService, AuthenticationService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
